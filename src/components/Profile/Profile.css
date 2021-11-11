@@ -1,0 +1,138 @@
+.profile__name {
+  padding-top: 74px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.profile__info {
+  margin: auto;
+  max-width: 410px;
+  padding-top: 123px;
+}
+
+.profile__info_form {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #424242;
+  padding-bottom: 16px;
+  padding-top: 17px;
+}
+
+.profile__info_form:first-of-type {
+  padding-top: 0;
+}
+
+.profile__info_form:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.profile__input-label {
+  padding:10px 0px 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #FFFFFF;
+  margin: 0;
+  min-width: 141px;
+}
+
+.profile__input {
+  padding:10px 0px 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  
+  color: #FFFFFF;
+  
+  background-color: #202020;
+  border: none;
+  direction: rtl;
+  width: 100%;
+}
+
+.profile__button-box {
+  display: grid;
+  justify-content: center;
+  margin-top: 220px;
+  padding-bottom: 70px;
+  text-align: center;
+}
+
+.profile__info-edit {    
+  border: none;
+  background-color: #202020;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.profile__info-edit:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.profile__log-out{
+  padding-top: 16px;
+  text-decoration: none;
+  font-style: normal;
+  line-height: 16px;
+  font-weight: 500;
+  font-size: 13px;
+  color: #EE3465;
+}
+
+.profile__log-out:hover {
+  cursor:pointer;
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__name {
+      padding-top: 216px;
+      margin:0px;
+  }
+
+  .profile__info {
+      padding-top: 96px;
+  }
+
+  .profile__button-box {
+      margin-top: 210px;
+      padding-bottom: 260px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .profile__name {
+      padding-top: 70px;
+  }
+
+  .profile__info {
+      padding-top: 80px;
+      max-width: 260px;
+  }
+
+  .profile__button-box {
+      margin-top: 370px;
+      padding-bottom: 42px;
+  }
+
+  .profile__info-edit {
+      font-size: 12px;
+      
+  }
+
+  .profile__log-out {
+      font-size: 12px;
+      
+  }
+}
