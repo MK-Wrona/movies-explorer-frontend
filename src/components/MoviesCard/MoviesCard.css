@@ -1,5 +1,5 @@
 .movies-card {
-    max-width: 1140px;
+    min-width: 100%;
     background-color: #2F2F2F;
     display: flex;
     justify-content: space-between;
@@ -35,9 +35,29 @@
 
 
 
-.movies__action-button{
+.movies-card__like{
     background-color: #2F2F2F;
     border: none;
+    cursor: pointer;
+    background-image: url(../../images/like.svg);
+    width:14px;
+    height:12px;
+}
+.movies-card__dislike{
+    background-color: #2F2F2F;
+    border: none;
+    cursor: pointer;
+    background-image: url(../../images/dislike.svg);
+    width:14px;
+    height:12px;
+}
+.movies-card__delete {
+    background-image: url('../../images/delete.svg');
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 12px;
+    border: none;
+    background-color: #2F2F2F;
     cursor: pointer;
 }
 
@@ -54,7 +74,10 @@
     .movies-card {
         display: grid;
         justify-content: center;
-        min-width: 320px;
+        min-width: 300px;
+        margin-right:0px;
+        
+        
     }
 
     .movies-card__info-box {

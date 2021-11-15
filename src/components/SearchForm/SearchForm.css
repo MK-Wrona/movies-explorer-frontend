@@ -16,6 +16,9 @@
     display: inline-flex;
     border-radius: 10px; 
 }
+.search__form-text:focus {
+    outline: #3DDC84 solid 1px;
+}
 
 .search__form-text {
     font-style: normal;

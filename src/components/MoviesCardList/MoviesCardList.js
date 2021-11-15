@@ -1,9 +1,8 @@
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
-import film_1 from '../../images/film_1.png'
-import film_2 from '../../images/film_2.png'
-import like from '../../images/like.svg'
-import dislike from '../../images/dislike.svg'
+import film_1 from '../../images/film_1.png';
+import film_2 from '../../images/film_2.png';
+
 
 
 function MoviesCardList(props) {
@@ -13,13 +12,22 @@ function MoviesCardList(props) {
                 
                 
                 photo={film_1}
-                button={like}
+                like={props.dislike}
+                dislike={""}
+                deleteCard={props.deleteCard}
             />
 
             <MoviesCard
                 
                 photo={film_2}
-                button={dislike}
+                like={props.like }
+                deleteCard={props.deleteCard}
+            />
+            <MoviesCard
+                
+                photo={film_2}
+                like={props.like}
+                deleteCard={props.deleteCard}
             />
 
             

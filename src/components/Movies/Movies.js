@@ -5,15 +5,16 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 
 
 function Movies() {
-    
+    const like= "movies-card__like"
+    const dislike= "movies-card__dislike"
     return (
         <section className="movies">
             
             <SearchForm />
 
             <MoviesCardList
-                type="button"
-                name="Like"
+                like={like}
+                dislike={dislike}
                 
             />
             

@@ -124,14 +124,18 @@ line-height: 16px;
   }
   
   .navigation__menu-open {
-    
-    background-image: url(../../images/mob_menu.PNG);
+    background-color: inherit;
+    background-position: center;
+    background-image: url(../../images/menu_icon.svg);
     border: none;
     width: 28px;
     height: 28px;
     padding: 0;
     display: none;
   }
+  
+
+
   .navigation__menu-open:hover {
     
     cursor: pointer;
@@ -176,6 +180,7 @@ line-height: 16px;
     box-sizing: border-box;
     
   }
+  
   
   .mobile-menu__close {
     background-image: url(../../images/close_icon.png);

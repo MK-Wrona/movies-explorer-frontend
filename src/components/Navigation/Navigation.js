@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navigation.css';
 import profile_cover from '../../images/acc_cover.PNG'
+import menu_icon from '../../images/menu_icon.svg'
 
 function Navigation({ isLoggedIn, isHeaderColored }) {
 

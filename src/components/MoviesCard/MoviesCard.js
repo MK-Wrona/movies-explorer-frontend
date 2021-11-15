@@ -8,7 +8,7 @@ function MoviesCard(props) {
                 <h2 className="movies-card__title">Фильм</h2>
                 <p className="movies-card__time">1h 30m</p>
                 </div>
-                <button className="movies__action-button"><img src={props.button} alt="Иконка лайка\диза\удалени"/></button>
+                <button className={props.like || props.deleteCard || props.dislike}></button>
             </div>
             <img src={props.photo} className="movies-card__image" alt="Промо фильма"/>
         </div>
