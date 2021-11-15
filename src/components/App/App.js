@@ -14,7 +14,7 @@ import SavedMovies from '../SavedMovies/SavedMovies'
 
 
 function App() {
-  const [isLoggedIn] = React.useState(true); // поменять на false/true для того чтобы свичнуть хедеры
+  const [isLoggedIn] = React.useState(false); // поменять на false/true для того чтобы свичнуть хедеры
   return (
     <div className="page">
       <div className="page_container">
