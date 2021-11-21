@@ -7,6 +7,7 @@
 
 .saved-movie__response {
     text-align: center;
+    color:#fff;
 }
 
 @media screen and (max-width: 550px) {
