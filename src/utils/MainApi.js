@@ -13,7 +13,10 @@ export const createProfile = (name, email, password) => {
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*"
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers":"*",
+            "Access-Control-Allow-Methods":"*",
+
         },
         body: JSON.stringify({
             email,
@@ -29,7 +32,9 @@ export const login = (email, password) => {
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*"
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers":"*",
+            "Access-Control-Allow-Methods":"*",
         },
         body: JSON.stringify({ email: email, password: password }),
     }).then(response);
