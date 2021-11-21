@@ -29,6 +29,7 @@ export const login = (email, password) => {
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
         },
         body: JSON.stringify({ email: email, password: password }),
     }).then(response);
