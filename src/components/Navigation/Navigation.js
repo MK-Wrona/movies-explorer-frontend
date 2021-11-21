@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navigation.css';
 import profile_cover from '../../images/acc_cover.PNG'
-import menu_icon from '../../images/menu_icon.svg'
 
-function Navigation({ isLoggedIn, isHeaderColored }) {
+
+function Navigation({ loggedIn, isHeaderColored }) {
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -15,10 +15,11 @@ function Navigation({ isLoggedIn, isHeaderColored }) {
   function handleMenuClose() {
     setIsMenuOpen(false);
   }
+  
 
   return (
     <nav className="navigation">
-      {isLoggedIn ? (
+      {loggedIn ? (
         <>
           <div className="navigation__desktop-menu">
             <NavLink className="navigation__site-link"  to="/movies">Фильмы</NavLink>

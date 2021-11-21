@@ -33,9 +33,22 @@
     margin: 13px 0 24px 0;
 }
 
+.movies-card__bookmark-button {
+    background-color: #2F2F2F;
+    border: none;
+    
+    background-image: url(../../images/dislike.svg);
+    width:14px;
+    height:12px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+}
 
 
-.movies-card__like{
+
+.movies-card__bookmark-button_active {
     background-color: #2F2F2F;
     border: none;
     cursor: pointer;
@@ -43,32 +56,36 @@
     width:14px;
     height:12px;
 }
-.movies-card__dislike{
-    background-color: #2F2F2F;
-    border: none;
-    cursor: pointer;
-    background-image: url(../../images/dislike.svg);
-    width:14px;
-    height:12px;
-}
-.movies-card__delete {
+
+.movies-card__bookmark-button_active:hover {
+    background-color: #313131;
     background-image: url('../../images/delete.svg');
-    background-repeat: no-repeat;
-    width: 14px;
-    height: 12px;
-    border: none;
-    background-color: #2F2F2F;
-    cursor: pointer;
 }
 
+.movies-card__delete-button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+
+    border: none;
+    border-radius: 50px;
+
+    background-color: #313131;
+    background-image: url('../../images/delete.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+}
+.movies-card__delete-button:hover {
+    opacity: 0.8;
+}
 
 .movies-card__image {
     width: 220px;
     height: 122px;
     padding: 6px 6px 6px 0;
 }
-
-
 
 @media screen and (max-width: 530px) {
     .movies-card {
@@ -113,4 +130,3 @@
         padding: 0;
     }
 }
-

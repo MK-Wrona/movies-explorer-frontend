@@ -1,10 +1,12 @@
 import React from 'react';
 import './Header.css';
 import logo from '../../images/top_logo.svg'
-import { Route, useHistory, Switch, Redirect, Link  } from 'react-router-dom';
+import { Route,  Switch,  Link, useLocation   } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 
-function Header({ isLoggedIn }) {
+function Header({ loggedIn }) {
+
+  
     return (
         <Switch>
           <Route exact path="/">
@@ -13,7 +15,7 @@ function Header({ isLoggedIn }) {
                 <Link to="/">
                   <img src={logo} alt="Логотип сайта" />
                 </Link>
-                <Navigation isLoggedIn={isLoggedIn} isHeaderColored={true} />
+                <Navigation loggedIn={loggedIn} isHeaderColored={true} />
               </div>
             </header>
           </Route>
@@ -23,7 +25,7 @@ function Header({ isLoggedIn }) {
                 <Link to="/">
                   <img src={logo} alt="Логотип сайта" />
                 </Link>
-                <Navigation isLoggedIn={isLoggedIn} isHeaderColored={false} />
+                <Navigation loggedIn={loggedIn} isHeaderColored={false} />
               </div>
             </header>
           </Route>

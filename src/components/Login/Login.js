@@ -2,29 +2,64 @@ import React from 'react';
 import { Link } from 'react-router-dom'; 
 import './Login.css'
 import logo from '../../images/top_logo.svg'
+import useFormValidation from "../../hooks/useFormValidation";
 
-function Login(){
+function Login({ onLogin, apiResponseMessage }){
+
+    const { values, errors, isValid, handleChange, resetForm } =
+    useFormValidation({});
+
+function handleOnSubmit(evt) {
+    evt.preventDefault();
+    onLogin(values.email, values.password);
+    
+}
     return (
-            <section className="register">
-                <div className="register__top">
-                    <div className="register__top-container">
-                    <img src={logo} className="register__logo" alt="Лого приложения"/>
-                <p className="register__header-title">Рады видеть!</p>
+            <section className="login">
+                <div className="login__top">
+                    <div className="login__top-container">
+                    <img src={logo} className="login__logo" alt="Лого приложения"/>
+                <p className="login__header-title">Рады видеть!</p>
                 </div>
                     </div>
-                    <form className="register__form">
-                    <div className="register__input-box">
-                    <label className="register__label">E-mail</label>
-                    <input className="register__input" placeholder=""></input>
-                    <span className="register__input-error"></span>
+                    <form className="login__form" onSubmit={handleOnSubmit}>
+                    <div className="login__input-box">
+                    <label className="login__label">E-mail
+                    <input className={`login__input ${
+                            errors.email && "login__input_invalid"
+                        }`}
+                        name="email"
+                        type="email"
+                        placeholder="Email"
+                        required
+                        autoComplete="off"
+                        onChange={handleChange}
+                        value={values.email || ""}></input>
+                    <span className="login__input-error">{errors.email}</span>
+                    </label>
                     </div>
-                    <div className="register__input-box">
-                    <label className="register__label">Пароль</label>
-                    <input className="register__input" placeholder=""></input>
-                    <span className="register__input-error"></span>
+                    <div className="login__input-box">
+                    <label className="login__label">Пароль
+                    <input className={`login__input ${
+                            errors.password && "login__input_invalid"
+                        }`}
+                        name="password"
+                        type="password"
+                        minLength="8"
+                        placeholder="Пароль"
+                        required
+                        autoComplete="off"
+                        onChange={handleChange}
+                        value={values.password || ""}></input>
+                    <span className="login__input-error">{errors.password}</span>
+                    </label>
                     </div>
-                    <button className="register__submit-button">Войти</button>
-                    <p className="register__login">Еще не зарегистрированы? <Link className="register__login-link" to="/signup"> Регистрация</Link></p>
+                    <button type="submit"
+                    className={`login__submit-button ${
+                        !isValid && "login__submit-button_disable"
+                    }`}
+                    disabled={!isValid}>Войти</button>
+                    <p className="login__register">Еще не зарегистрированы? <Link className="login__register-link" to="/signup"> Регистрация</Link></p>
                     </form>
                 
             </section>

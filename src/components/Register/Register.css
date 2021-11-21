@@ -7,6 +7,34 @@
     
     
 }
+.register__submit-button_disable{
+    background-color: #2F2F2F;
+}
+
+.register__input_invalid {
+    color: #EE3465;
+}
+
+.register__input-error {
+    max-width: 396px;
+    height: 12px;
+    padding-bottom: 10px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+
+    color: #EE3465;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.register__label:last-of-type {
+    padding-bottom: 69px;
+}
 .register__top{
     display:flex;
     flex-direction: column;
@@ -45,46 +73,46 @@
     width:396px;
     
 }
-.register__input{
-    max-width:100%;
-    height:46px;
+.register__input {
+    max-width: 366px;
+    max-height: 16px;
+    padding: 15px;
+
+    border: none;
     background-color: #2F2F2F;
-    border:none;
-    margin-top:10px;
-    margin-bottom:10px;
-    color:white;
-    border-radius: 10px;
+    border-radius: 8px;
 
-    font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
-    font-size: 14px;
+    color: #fff;
+    font-family: Inter;
     font-style: normal;
-    font-weight: 400;
-    line-height: 17px;
-
-    
-
-
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
 }
 
-.register__label{
-    
+
+.register__label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 10px;
+
+    color: #8B8B8B;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
     font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 12px;
-    text-align: left;
-    
-color:#8B8B8B;
-position: absolute;
-    left: 0px;
-    bottom: calc(100% - 5px);
-
+    width:100%;
 }
+
 .register__input-box{
     display: flex;
     flex-direction: column;
     position: relative;
     width:100%;
+    max-height:90px;
+    
     
 }
 .register__input-box:nth-child(2n){
@@ -94,7 +122,7 @@ position: absolute;
 .register__input-error{
     position: absolute;
     left: 0px;
-    top: calc(100% + 2px);
+    top: calc(100% - 20px);
     z-index: 15px;
 }
 .register__submit-button{
@@ -137,8 +165,7 @@ padding-top:15px;
 }
 
 @media screen and (max-width: 768px) {
-    
-    
+   
   }
   
   @media screen and (max-width: 530px) {
@@ -150,11 +177,13 @@ padding-top:15px;
     
     .register__form{
         display: flex;
-        width:260px;
+        max-width:260px;
         align-items: center;
+        
     }
     .register__top-container{
         
         width:260px;
     }
+    
   }
