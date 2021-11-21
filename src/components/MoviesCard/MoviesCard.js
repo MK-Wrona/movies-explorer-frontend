@@ -1,18 +1,18 @@
 import './MoviesCard.css';
 
-function MoviesCard({ movie, onLikeClick, checkBookmarkStatus}) {
+function MoviesCard({ movie, onLikeClick, checkLikeStatus}) {
 
 const { nameEN, duration, image, trailer } = movie;
 
-    const isLiked = checkBookmarkStatus(movie);
+    const isLiked = checkLikeStatus(movie);
     const durationConverter = (duration) => {
         const hours = Math.floor(duration / 60);
         const minutes = duration % 60;
-        return `${hours > 0 ? hours + "ч " : ""}${minutes}м`;
+        return `${hours > 0 ? hours + "ч" : ""}${minutes}м`;
     };
 
-    const cardLikeButtonClassName = `movies-card__bookmark-button ${
-        isLiked ? "movies-card__bookmark-button_active" : " "
+    const cardLikeButtonClassName = `movies-card__like-button ${
+        isLiked ? "movies-card__like-button_active" : " "
     }`;
 
     function handleBookmarkClick() {

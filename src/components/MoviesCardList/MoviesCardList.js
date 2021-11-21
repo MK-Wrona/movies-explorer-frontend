@@ -16,7 +16,7 @@ import {
 function MoviesCardList({
     movies,
     toggleMovieLike,
-    checkBookmarkStatus,
+    checkLikeStatus,
     isSavedPage,
 }) {
     const [extraPortion, setExtraPortion] = React.useState(3);
@@ -77,22 +77,22 @@ function MoviesCardList({
         <section className="movies__card-list">
             
                 {isSavedPage &&
-                    movies.map((movie,index) => (
+                    movies.map((movie) => (
                         <MoviesCard
                             key={movie.movieId}
                             movie={movie}
                             onLikeClick={toggleMovieLike}
-                            checkBookmarkStatus={checkBookmarkStatus}
+                            checkLikeStatus={checkLikeStatus}
                         />
                     ))}
 
                 {!isSavedPage &&
-                    renderMovies.map((movie,index) => (
+                    renderMovies.map((movie) => (
                         <MoviesCard
                             key={movie.movieId}
                             movie={movie}
                             onLikeClick={toggleMovieLike}
-                            checkBookmarkStatus={checkBookmarkStatus}
+                            checkLikeStatus={checkLikeStatus}
                         />
                     ))}
             
@@ -100,7 +100,7 @@ function MoviesCardList({
             {!isSavedPage && currentCount < movies.length && (
                 <button
                     className="search__more"
-                    aria-label="Load more movies"
+                    aria-label="more movies"
                     onClick={handleMoreCards}
                 >
                     Ещё

@@ -33,7 +33,7 @@
     margin: 13px 0 24px 0;
 }
 
-.movies-card__bookmark-button {
+.movies-card__like-button {
     background-color: #2F2F2F;
     border: none;
     
@@ -48,7 +48,7 @@
 
 
 
-.movies-card__bookmark-button_active {
+.movies-card__like-button_active {
     background-color: #2F2F2F;
     border: none;
     cursor: pointer;
@@ -57,7 +57,7 @@
     height:12px;
 }
 
-.movies-card__bookmark-button_active:hover {
+.movies-card__like-button_active:hover {
     background-color: #313131;
     background-image: url('../../images/delete.svg');
 }

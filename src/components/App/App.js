@@ -50,6 +50,7 @@ function App() {
         email: "",
     });
     const [loggedIn, setLoggedIn] = useState(false);
+  
     const [isLoading, setIsLoading] = useState(false);
     const [apiResponseMessage, setResponseMessage] = useState(" ");
     const [allMovies, setAllmovies] = useState([]);
@@ -68,6 +69,7 @@ function App() {
                 .then((res) => {
                     if (res) {
                         setLoggedIn(true);
+                        
                         setCurrentUser(res);
                         history.push(location);
                     }
@@ -272,12 +274,17 @@ function App() {
                 console.log(res.message);
             })
             .catch((err) => console.log(err));
+            
     }
 
-    function checkBookmarkStatus(movie) {
-            return savedMovies.some(
-                savedMovie => savedMovie.movieId === movie.movieId 
-            );         
+    function checkLikeStatus(movie) {
+        
+             return savedMovies.some(
+                savedMovie => savedMovie.movieId === movie.movieId
+                
+            );    
+                 
+            
     }
 
     function toggleMovieLike(movie, isLiked) {
@@ -327,7 +334,7 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
     <div className="page">
       <div className="page_container">
-      <Header />
+      <Header loggedIn={loggedIn}/>
         
       <Switch>
                     <Route exact path="/">
@@ -370,7 +377,7 @@ function App() {
                         moviesSearchResponse={moviesSearchResponse}
                         movies={searchMoviesResult}
                         toggleMovieLike={toggleMovieLike}
-                        checkBookmarkStatus={checkBookmarkStatus}
+                        checkLikeStatus={checkLikeStatus}
                     />
 
                     <ProtectedRoute
@@ -384,7 +391,7 @@ function App() {
                         moviesSearchResponse={savedMoviesSearchResponse}
                         movies={savedMovies}
                         toggleMovieLike={toggleMovieLike}
-                        checkBookmarkStatus={checkBookmarkStatus}
+                        checkLikeStatus={checkLikeStatus}
                     />
 
                     <Route path="*">

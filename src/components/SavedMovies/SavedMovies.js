@@ -14,7 +14,7 @@ function SavedMovies({
     setPreloader,
     moviesSearchResponse,
     toggleMovieLike,
-    checkBookmarkStatus,
+    checkLikeStatus,
     sortShortMovies,
 }) {
     const [shortMovies, setShortMovies] = useState([]);
@@ -61,7 +61,7 @@ function SavedMovies({
                         <MoviesCardList
                             movies={isChecked ? shortMovies : movies}
                             toggleMovieLike={toggleMovieLike}
-                            checkBookmarkStatus={checkBookmarkStatus}
+                            checkLikeStatus={checkLikeStatus}
                             isSavedPage={true}
                         />
                     )}

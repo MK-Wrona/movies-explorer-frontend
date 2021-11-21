@@ -4,7 +4,7 @@ import './Navigation.css';
 import profile_cover from '../../images/acc_cover.PNG'
 
 
-function Navigation({ loggedIn, isHeaderColored }) {
+function Navigation({ loggedIn, isHeaderColored}) {
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -15,6 +15,8 @@ function Navigation({ loggedIn, isHeaderColored }) {
   function handleMenuClose() {
     setIsMenuOpen(false);
   }
+
+
   
 
   return (
