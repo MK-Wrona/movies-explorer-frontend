@@ -11,7 +11,6 @@ export const createProfile = (name, email, password) => {
     return fetch(`${BASE_URL}/signup`, {
         method: "POST",
         headers: {
-            Accept: "application/json",
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers":"*",
@@ -30,7 +29,6 @@ export const login = (email, password) => {
     return fetch(`${BASE_URL}/signin`, {
         method: "POST",
         headers: {
-            Accept: "application/json",
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers":"*",
@@ -44,7 +42,7 @@ export const getUser = (token) => {
     return fetch(`${BASE_URL}/users/me`, {
         method: "GET",
         headers: {
-            Accept: "application/json",
+            
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         },
@@ -56,7 +54,7 @@ export const updateProfile = ({ name, email }) => {
     return fetch(`${BASE_URL}/users/me`, {
         method: "PATCH",
         headers: {
-            Accept: "application/json",
+            
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         },
@@ -69,7 +67,7 @@ export const createMovie = (data) => {
     return fetch(`${BASE_URL}/movies`, {
         method: "POST",
         headers: {
-            Accept: "application/json",
+            
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         },
@@ -94,7 +92,7 @@ export const deleteMovie = (movieId) => {
     return fetch(`${BASE_URL}/movies/${movieId}`, {
         method: "DELETE",
         headers: {
-            Accept: "application/json",
+            
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         },
@@ -106,7 +104,7 @@ export const getUserMovies = () => {
     return fetch(`${BASE_URL}/movies`, {
         method: "GET",
         headers: {
-            Accept: "application/json",
+            
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         },
