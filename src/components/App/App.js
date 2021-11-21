@@ -108,8 +108,9 @@ function App() {
         login(email, password)
             .then((res) => {
                 if (res.token) {
-                    setLoggedIn(true);
+                    
                     localStorage.setItem("jwt", res.token);
+                    setLoggedIn(true);
                     history.push("/movies");
                 }
             })
