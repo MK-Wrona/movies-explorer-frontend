@@ -1,4 +1,4 @@
-const BASE_URL = "http://daru13.back.nomoredomains.icu/";
+const BASE_URL = "http://daru13.back.nomoredomains.icu";
 
 const response = (res) => {
     if (res.ok) {
@@ -13,6 +13,7 @@ export const createProfile = (name, email, password) => {
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
         },
         body: JSON.stringify({
             email,
