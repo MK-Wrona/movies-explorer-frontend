@@ -1,5 +1,5 @@
-const BASE_URL = "http://daru13.back.nomoredomains.icu";
-
+const BASE_URL = "http://localhost:3000";
+// const BASE_URL = "http://daru13.back.nomoredomains.icu";
 const response = (res) => {
     if (res.ok) {
         return res.json();
@@ -11,13 +11,9 @@ export const createProfile = (name, email, password) => {
     return fetch(`${BASE_URL}/signup`, {
         method: "POST",
         headers: {
+            Accept:"application/json",
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
             
-            "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
-            "Access-Control-Allow-Credentials": "true",
-            "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
-
         },
         body: JSON.stringify({
             email,
@@ -31,12 +27,8 @@ export const login = (email, password) => {
     return fetch(`${BASE_URL}/signin`, {
         method: "POST",
         headers: {
+            Accept:"application/json",
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            
-            "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
-            "Access-Control-Allow-Credentials": "true",
-            "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
         },
         body: JSON.stringify({ email: email, password: password }),
     }).then(response);
@@ -46,7 +38,7 @@ export const getUser = (token) => {
     return fetch(`${BASE_URL}/users/me`, {
         method: "GET",
         headers: {
-            
+            Accept:"application/json",
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         },
@@ -58,7 +50,7 @@ export const updateProfile = ({ name, email }) => {
     return fetch(`${BASE_URL}/users/me`, {
         method: "PATCH",
         headers: {
-            
+            Accept:"application/json",
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         },
@@ -71,7 +63,7 @@ export const createMovie = (data) => {
     return fetch(`${BASE_URL}/movies`, {
         method: "POST",
         headers: {
-            
+            Accept:"application/json",
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         },
@@ -96,7 +88,7 @@ export const deleteMovie = (movieId) => {
     return fetch(`${BASE_URL}/movies/${movieId}`, {
         method: "DELETE",
         headers: {
-            
+            Accept:"application/json",
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         },
@@ -108,7 +100,7 @@ export const getUserMovies = () => {
     return fetch(`${BASE_URL}/movies`, {
         method: "GET",
         headers: {
-            
+            Accept:"application/json",
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         },
