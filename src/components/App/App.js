@@ -263,7 +263,7 @@ function App() {
     function addMovie(movie) {
         createMovie(movie)
             .then((res) => {
-                const newSavedMovie = res.newMovie;
+                const newSavedMovie = res;
                 setSavedMovies([...savedMovies, newSavedMovie]);
                 console.log(res.message);
             })
