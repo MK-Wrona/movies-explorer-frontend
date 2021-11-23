@@ -12,7 +12,7 @@ const { nameEN, duration, image, trailer } = movie;
         return `${hours > 0 ? hours + "ч" : ""}${minutes}м`;
     };
 
-    function handleBookmarkClick() {
+    function handleLikeClick() {
         onLikeClick(movie, isLiked);
     }
 
@@ -32,21 +32,21 @@ const { nameEN, duration, image, trailer } = movie;
                 <button
                     className="movies-card__delete-button"
                     type="button"
-                    aria-label="Bookmark Button"
-                    onClick={handleBookmarkClick}
+                    aria-label="like btn"
+                    onClick={handleLikeClick}
                 ></button>
                 </Route>
                 <Route exact path="/movies">
                     { isLiked ? (<button
                     className="movies-card__like-button_active"
                     type="button"
-                    aria-label="Bookmark Button"
-                    onClick={handleBookmarkClick}
+                    aria-label="like btn"
+                    onClick={handleLikeClick}
                 ></button>) : (<button
                     className="movies-card__like-button"
                     type="button"
-                    aria-label="Bookmark Button"
-                    onClick={handleBookmarkClick}
+                    aria-label="like btn"
+                    onClick={handleLikeClick}
                 ></button>)
 
                     }
