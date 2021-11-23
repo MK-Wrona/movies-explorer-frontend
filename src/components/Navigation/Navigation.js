@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navigation.css';
-import profile_cover from '../../images/acc_cover.PNG'
+
 
 
 function Navigation({ loggedIn, isHeaderColored}) {
@@ -28,7 +28,7 @@ function Navigation({ loggedIn, isHeaderColored}) {
             <NavLink className="navigation__site-link"  to="/saved-movies">Сохранённые фильмы</NavLink>
             <div className="navigation__user-profile_logo-box">
             <Link className="navigation__user-profile" to="/profile">Аккаунт</Link>
-            <img className="navigation__user-profile_logo" src={profile_cover} alt="Лого аккаунта"/>
+            <div className="navigation__user-profile_logo" /><div/>
             
             </div>
           </div>
@@ -51,8 +51,8 @@ function Navigation({ loggedIn, isHeaderColored}) {
           <NavLink className="mobile-menu__site-link"  to="/saved-movies" onClick={handleMenuClose}>Сохранённые фильмы</NavLink>
           
           <div className="navigation__user-profile-flex">
-          <Link className="navigation__user-profile" to="/profile">Аккаунт</Link>
-            <img className="navigation__user-profile_logo" src={profile_cover} alt="Лого аккаунта"/>
+          <NavLink className="navigation__user-profile" exact to="/profile" onClick={handleMenuClose}>Аккаунт</NavLink>
+            <div className="navigation__user-profile_logo" ></div>
             </div>
             </div>
         </div>

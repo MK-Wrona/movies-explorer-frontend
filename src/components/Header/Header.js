@@ -8,7 +8,7 @@ function Header({ loggedIn }) {
     return (
         <Switch>
           <Route exact path="/">
-          <header className={`header ${loggedIn ? "header" : "header_colored"}`}>  
+          <header className="header header_colored">  
               <div className="header__wrap">
                 <Link to="/">
                   <img src={logo} alt="Логотип сайта" />

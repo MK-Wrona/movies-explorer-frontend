@@ -55,8 +55,8 @@ function handleOnSubmit(evt) {
                     </label>
                     </div>
                     <button type="submit"
-                    className={`login__submit-button ${
-                        !isValid && "login__submit-button_disable"
+                    className={`login__submit-button_disable ${
+                        isValid && "login__submit-button"
                     }`}
                     disabled={!isValid}>Войти</button>
                     <p className="login__register">Еще не зарегистрированы? <Link className="login__register-link" to="/signup"> Регистрация</Link></p>

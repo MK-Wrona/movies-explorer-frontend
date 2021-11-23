@@ -30,17 +30,17 @@ import {
     getUserMovies,
 } from "../../utils/MainApi";
 import {
-    CONFLICT_EMAIL_MESSAGE,
-    INVALID_DATA_MESSAGE,
-    AUTH_DATA_ERROR_MESSAGE,
+    EMAIL_ERROR,
+    INVALID_DATA,
+    AUTH_ERROR,
     SERVER_ERROR_MESSAGE,
     MOVIES_SERVER_ERROR_MESSAGE,
-    MOVIES_NOT_FOUND_MESSAGE,
-    SAVED_MOVIE_NOT_FOUND_MESSAGE,
-    SUCCSESS_UPDATE_MESSAGE,
+    MOVIES_404,
+    SAVED_MOVIE_404,
+    UPDATE_USER_MESSAGE_OK,
     IMAGE_NOT_FOUND,
-} from "../../utils/responseMessages";
-import { DURATION_FOR_SORTING_SHORT_FILM } from "../../utils/constants";
+} from "../../utils/resMessages";
+import { SORTING_SHORT_FILM_TIMER } from "../../utils/constants";
 
 
 
@@ -60,7 +60,12 @@ function App() {
     const [savedMoviesSearchResponse, setSavedMoviesSearchResponse] =
         useState("");
     const history = useHistory();
+    
     let location = useLocation().pathname;
+
+    
+   
+
 
     function tokenCheck() {
         const token = localStorage.getItem("jwt");
@@ -92,13 +97,13 @@ function App() {
             })
             .catch((err) => {
                 if (err === "Error 400") {
-                    return showResponseMessageTimer(INVALID_DATA_MESSAGE);
+                    return showResMessage(INVALID_DATA);
                 }
                 if (err === "Error 409") {
-                    return showResponseMessageTimer(CONFLICT_EMAIL_MESSAGE);
+                    return showResMessage(EMAIL_ERROR);
                 }
                 if (err === "Error 500") {
-                    return showResponseMessageTimer(SERVER_ERROR_MESSAGE);
+                    return showResMessage(SERVER_ERROR_MESSAGE);
                 }
                 console.log(err);
             });
@@ -116,14 +121,14 @@ function App() {
             })
             .catch((err) => {
                 if (err === "Error 400") {
-                    return showResponseMessageTimer(INVALID_DATA_MESSAGE);
+                    return showResMessage(INVALID_DATA);
                 }
                 if (err === "Error 401") {
-                    return showResponseMessageTimer(AUTH_DATA_ERROR_MESSAGE);
+                    return showResMessage(AUTH_ERROR);
                 }
                 if (err === "Error 500") {
                     console.log(SERVER_ERROR_MESSAGE);
-                    return showResponseMessageTimer(SERVER_ERROR_MESSAGE);
+                    return showResMessage(SERVER_ERROR_MESSAGE);
                 }
                 console.log(err);
             });
@@ -138,11 +143,11 @@ function App() {
                         name: res.newName,
                         email: res.newEmail,
                     });
-                    showResponseMessageTimer(SUCCSESS_UPDATE_MESSAGE);
+                    showResMessage(UPDATE_USER_MESSAGE_OK);
                 }
             })
             .catch((err) => {
-                showResponseMessageTimer(SERVER_ERROR_MESSAGE);
+                showResMessage(SERVER_ERROR_MESSAGE);
                 console.log(err);
             });
     }
@@ -160,9 +165,9 @@ function App() {
         history.push("/");
     }
 
-    function showResponseMessageTimer(error) {
+    function showResMessage(error) {
         setResponseMessage(error);
-        setTimeout(() => setResponseMessage(""), 10000);
+        setTimeout(() => setResponseMessage(""), 8000);
     }
 
     function getBeatMovies() {
@@ -225,17 +230,17 @@ function App() {
             );
         });
         if (result.length === 0 && location === "/movies") {
-            setMoviesSearchResponse(MOVIES_NOT_FOUND_MESSAGE);
+            setMoviesSearchResponse(MOVIES_404);
         }
         if (result.length === 0 && location === "/saved-movies") {
-            setSavedMoviesSearchResponse(SAVED_MOVIE_NOT_FOUND_MESSAGE);
+            setSavedMoviesSearchResponse(SAVED_MOVIE_404);
         }
         return result;
     }
 
     function sortShortMovies(movies) {
         const shortMoviesArray = movies.filter(
-            (movie) => movie.duration <= DURATION_FOR_SORTING_SHORT_FILM
+            (movie) => movie.duration <= SORTING_SHORT_FILM_TIMER
         );
         return shortMoviesArray;
     }
@@ -329,7 +334,7 @@ function App() {
     useEffect(() => {
         tokenCheck();
     }, []);
-   // поменять на false/true для того чтобы свичнуть хедеры
+  
   return (
     <>
     <CurrentUserContext.Provider value={currentUser}>
@@ -379,6 +384,7 @@ function App() {
                         movies={searchMoviesResult}
                         toggleMovieLike={toggleMovieLike}
                         checkLikeStatus={checkLikeStatus}
+                        
                     />
 
                     <ProtectedRoute
@@ -393,6 +399,7 @@ function App() {
                         movies={savedMovies}
                         toggleMovieLike={toggleMovieLike}
                         checkLikeStatus={checkLikeStatus}
+                        
                     />
 
                     <Route path="*">

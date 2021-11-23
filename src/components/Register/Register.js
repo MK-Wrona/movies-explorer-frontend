@@ -72,8 +72,8 @@ function Register({ onRegister, apiResponseMessage }){
                     </div>
                     <span className="register__input-error">{apiResponseMessage}</span>
                     <button type="submit"
-                    className={`register__submit-button ${
-                        !isValid && "register__submit-button_disable"
+                    className={`register__submit-button_disable ${
+                        isValid && "register__submit-button"
                     }`}
                     disabled={!isValid}>Зарегистрироваться</button>
                     <p className="register__login">Уже зарегистрированы? <Link className="register__login-link" to="/signin"> Войти</Link></p>

@@ -98,9 +98,7 @@ function Profile({
                         onClick={handleOnSubmit}
                         disabled={!isValid && !isValuesNotMatched}
                     >
-                        {isValid && isValuesNotMatched
-                            ? "Сохранить"
-                            : "Редактировать"}
+                        Сохранить
                     </button>
                     <button
                         type="button"
