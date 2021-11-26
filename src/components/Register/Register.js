@@ -19,7 +19,9 @@ function Register({ onRegister, apiResponseMessage }){
             <section className="register">
                 <div className="register__top">
                     <div className="register__top-container">
-                    <img src={logo} className="register__logo" alt="Лого приложения"/>
+                    <Link to="/">
+                <img src={logo} className="login__logo" alt="Лого приложения"/>
+                </Link>
                 <p className="register__header-title">Добро пожаловать!</p>
                 </div>
                     </div>

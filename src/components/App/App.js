@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Route,  Switch, useHistory, useLocation } from 'react-router-dom';
+import { Route,  Switch, useHistory, useLocation, Redirect } from 'react-router-dom';
 import './App.css';
 import Register from '../Register/Register'
 import Login from '../Login/Login'
@@ -348,18 +348,23 @@ function App() {
                     </Route>
 
                     <Route path="/signup">
+                    {loggedIn ? <Redirect to="/" /> :
                         <Register
-                            onRegister={handleRegister}
-                            apiResponseMessage={apiResponseMessage}
-                            
-                        />
+                        onRegister={handleRegister}
+                        apiResponseMessage={apiResponseMessage}
+                        
+                    />
+                        }
                     </Route>
 
                     <Route path="/signin">
+                        {loggedIn ? <Redirect to="/" /> :
                         <Login
-                            onLogin={handleLogin}
-                            apiResponseMessage={apiResponseMessage}
-                        />
+                        onLogin={handleLogin}
+                        apiResponseMessage={apiResponseMessage}
+                    />
+                        }
+                        
                     </Route>
                     
                     <ProtectedRoute

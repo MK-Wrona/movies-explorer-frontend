@@ -18,7 +18,9 @@ function handleOnSubmit(evt) {
             <section className="login">
                 <div className="login__top">
                     <div className="login__top-container">
-                    <img src={logo} className="login__logo" alt="Лого приложения"/>
+                    <Link to="/">
+                <img src={logo} className="login__logo" alt="Лого приложения"/>
+                </Link>
                 <p className="login__header-title">Рады видеть!</p>
                 </div>
                     </div>
