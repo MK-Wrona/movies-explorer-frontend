@@ -4,14 +4,13 @@ import "./SearchForm.css";
 import useFormValidation from "../../hooks/useFormValidation";
 
 
-function SearchForm({ handleSearch, setPreloader, setIsChecked, isLoading }) {
+function SearchForm({ handleSearch, setPreloader, setIsChecked, isLoading, toggleSubmit, isSubmitted, unToggleSubmit }) {
     const { values, errors, isValid, handleChange } =
         useFormValidation({});
 
     const [keyword, setKeyword] = useState("");
     const [isShortMovies, setIsShortMovies] = useState(false);
-    const [isSubmitted, setisSubmitted] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("")
+    
 
     function onCheckboxToggle(checked) {
         setIsShortMovies(checked);
@@ -27,12 +26,13 @@ function SearchForm({ handleSearch, setPreloader, setIsChecked, isLoading }) {
         event.preventDefault();
         if (keyword === "") {
             console.log(keyword)
-            setErrorMessage("Нужно ввести ключевое слово")
-            setisSubmitted(true)
+            
+            toggleSubmit()
           } else {
             handleSearch(keyword);
             setPreloader(true);
-            setErrorMessage("")
+            
+            unToggleSubmit()
         } 
             
           }
@@ -41,7 +41,7 @@ function SearchForm({ handleSearch, setPreloader, setIsChecked, isLoading }) {
     return (
         
             <div className="movies__search">
-                <form className="search__form" onSubmit={handleSubmit} noValidate isSubmitted={isSubmitted} >
+                <form className="search__form" onSubmit={handleSubmit} noValidate  >
                     
                     <input
                         className="search__form-text"
@@ -62,7 +62,6 @@ function SearchForm({ handleSearch, setPreloader, setIsChecked, isLoading }) {
                         
                     >Найти</button>
                 </form>
-                <span className="search-form__caption">{errorMessage}</span>
                 
 
                 <ToggleSwitch onCheckboxToggle={onCheckboxToggle} />

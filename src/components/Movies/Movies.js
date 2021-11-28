@@ -16,7 +16,9 @@ function Movies({
     toggleMovieLike,
     checkLikeStatus,
     sortShortMovies,
-    isSubmitted
+    toggleSubmit,
+    isSubmitted,
+    unToggleSubmit
 }) {
     const [shortMovies, setShortMovies] = useState([]);
     const [isChecked, setIsChecked] = useState(false);
@@ -37,6 +39,8 @@ function Movies({
                     setIsChecked={setIsChecked}
                     isLoading={isLoading}
                     isSubmitted={isSubmitted}
+                    toggleSubmit={toggleSubmit}
+                    unToggleSubmit={unToggleSubmit}
                 />
                 <div className="movies">
                     {isLoading && <Preloader />}

@@ -62,8 +62,14 @@ function App() {
     const history = useHistory();
     
     let location = useLocation().pathname;
+    const [isSubmitted, setisSubmitted] = useState(false);
 
-    
+    const toggleSubmit = () => { 
+        setisSubmitted(true);
+      }
+      const unToggleSubmit = () => { 
+        setisSubmitted(false);
+      } 
    
 
 
@@ -389,6 +395,9 @@ function App() {
                         movies={searchMoviesResult}
                         toggleMovieLike={toggleMovieLike}
                         checkLikeStatus={checkLikeStatus}
+                        toggleSubmit={toggleSubmit}
+                        isSubmitted={isSubmitted}
+                        unToggleSubmit={unToggleSubmit}
                         
                     />
 
@@ -404,6 +413,9 @@ function App() {
                         movies={savedMovies}
                         toggleMovieLike={toggleMovieLike}
                         checkLikeStatus={checkLikeStatus}
+                        toggleSubmit={toggleSubmit}
+                        isSubmitted={isSubmitted}
+                        unToggleSubmit={unToggleSubmit}
                         
                     />
 

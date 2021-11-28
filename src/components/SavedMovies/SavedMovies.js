@@ -16,6 +16,9 @@ function SavedMovies({
     toggleMovieLike,
     checkLikeStatus,
     sortShortMovies,
+    toggleSubmit,
+                        isSubmitted,
+                        unToggleSubmit
 }) {
     const [shortMovies, setShortMovies] = useState([]);
     const [isChecked, setIsChecked] = useState(false);
@@ -34,6 +37,9 @@ function SavedMovies({
                     setPreloader={setPreloader}
                     setIsChecked={setIsChecked}
                     isLoading={isLoading}
+                    isSubmitted={isSubmitted}
+                    toggleSubmit={toggleSubmit}
+                    unToggleSubmit={unToggleSubmit}
                 />
                 <div className="saved-movies">
                     {isLoading && <Preloader />}
@@ -43,10 +49,16 @@ function SavedMovies({
                                 {moviesSearchResponse}
                             </p>
                         )
-                        : movies.length === 0 && (
-                            <p className="saved-movie__response">
-                                Нет сохраненных фильмов
-                            </p>
+                        : ""}
+                        {isSubmitted ? (<p className="movie__response">
+                                Нужно ввести ключевое слово
+                            </p>): (
+                            ""
+                        )}
+                        {!isSubmitted && movies.length === 0 ? (<p className="movie__response">
+                        Нет сохраненных фильмов
+                            </p>): (
+                            ""
                         )}
 
                     {isChecked &&
