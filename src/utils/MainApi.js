@@ -1,5 +1,5 @@
-// const BASE_URL = "http://localhost:3000";
-const BASE_URL = "https://daru13.back.nomoredomains.icu";
+const BASE_URL = "http://localhost:3000";
+// const BASE_URL = "https://daru13.back.nomoredomains.icu";
 const response = (res) => {
     if (res.ok) {
         return res.json();

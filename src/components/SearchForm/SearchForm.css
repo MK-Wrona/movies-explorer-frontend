@@ -37,8 +37,27 @@
     display: inline-flex;
     border-radius: 10px; 
 }
+.search__button_disable{
+    background-image: url('../../images/searchbtn.svg');
+    width: 100px;
+    height: 52px;
+    border-radius: 5px;
+    margin: 10px;
+    border: 1px solid #EE3465;
+    background-color: #202020;
+    
+    color:#FFFFFF
+}
 
-
+.search-form__caption{
+    height: 15px;
+    min-width:40px;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+}
 
 .search__button {
     background-image: url('../../images/searchbtn.svg');

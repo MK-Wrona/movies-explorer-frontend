@@ -16,6 +16,7 @@ function Movies({
     toggleMovieLike,
     checkLikeStatus,
     sortShortMovies,
+    isClicked
 }) {
     const [shortMovies, setShortMovies] = useState([]);
     const [isChecked, setIsChecked] = useState(false);
@@ -35,6 +36,7 @@ function Movies({
                     setPreloader={setPreloader}
                     setIsChecked={setIsChecked}
                     isLoading={isLoading}
+                    isClicked={isClicked}
                 />
                 <div className="movies">
                     {isLoading && <Preloader />}
@@ -45,11 +47,12 @@ function Movies({
                                 {moviesSearchResponse}
                             </p>
                         )
-                        : movies.length === 0 && (
-                            <p className="movie__response">
+                        : ""}
+                        {isClicked ? (<p className="movie__response">
                                 Нужно ввести ключевое слово
-                            </p>
-                        )}
+                            </p>): (<p className="movie__response">
+                                
+                            </p>)}
 
                     {isChecked &&
                         movies.length !== 0 &&

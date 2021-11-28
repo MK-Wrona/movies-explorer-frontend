@@ -10,6 +10,8 @@ function SearchForm({ handleSearch, setPreloader, setIsChecked, isLoading }) {
 
     const [keyword, setKeyword] = useState("");
     const [isShortMovies, setIsShortMovies] = useState(false);
+    const [isClicked, setisClicked] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("")
 
     function onCheckboxToggle(checked) {
         setIsShortMovies(checked);
@@ -23,16 +25,24 @@ function SearchForm({ handleSearch, setPreloader, setIsChecked, isLoading }) {
 
     function handleSubmit(event) {
         event.preventDefault();
-        handleSearch(keyword);
-        setPreloader(true);
-    }
+        if (keyword === "") {
+            console.log(keyword)
+            setErrorMessage("Нужно ввести ключевое слово")
+            setisClicked(true)
+          } else {
+            handleSearch(keyword);
+            setPreloader(true);
+            setErrorMessage("")
+        } 
+            
+          }
 
+        
     return (
         
             <div className="movies__search">
-                <form className="search__form" onSubmit={handleSubmit} required>
+                <form className="search__form" onSubmit={handleSubmit}  setisClicked={setisClicked} >
                     
-
                     <input
                         className="search__form-text"
                         name="keyword"
@@ -40,7 +50,7 @@ function SearchForm({ handleSearch, setPreloader, setIsChecked, isLoading }) {
                         placeholder="Фильм"
                         minLength="1"
                         maxLength="200"
-                        required
+                        
                         autoComplete="off"
                         value={values.keyword || ""}
                         onChange={handleKeyword}
@@ -49,12 +59,11 @@ function SearchForm({ handleSearch, setPreloader, setIsChecked, isLoading }) {
                     
                     
                     <button
-                        className={`search__button ${
-                            !isValid && "search__button_disable"
-                        }`}
-                        disabled={!isValid}
+                        className="search__button"
+                        
                     >Найти</button>
                 </form>
+                <span className="search-form__caption">{errorMessage}</span>
                 
 
                 <ToggleSwitch onCheckboxToggle={onCheckboxToggle} />
