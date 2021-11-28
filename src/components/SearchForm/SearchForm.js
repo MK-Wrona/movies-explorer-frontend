@@ -10,7 +10,7 @@ function SearchForm({ handleSearch, setPreloader, setIsChecked, isLoading }) {
 
     const [keyword, setKeyword] = useState("");
     const [isShortMovies, setIsShortMovies] = useState(false);
-    const [isClicked, setisClicked] = useState(false);
+    const [isSubmitted, setisSubmitted] = useState(false);
     const [errorMessage, setErrorMessage] = useState("")
 
     function onCheckboxToggle(checked) {
@@ -28,7 +28,7 @@ function SearchForm({ handleSearch, setPreloader, setIsChecked, isLoading }) {
         if (keyword === "") {
             console.log(keyword)
             setErrorMessage("Нужно ввести ключевое слово")
-            setisClicked(true)
+            setisSubmitted(true)
           } else {
             handleSearch(keyword);
             setPreloader(true);
@@ -41,7 +41,7 @@ function SearchForm({ handleSearch, setPreloader, setIsChecked, isLoading }) {
     return (
         
             <div className="movies__search">
-                <form className="search__form" onSubmit={handleSubmit}  setisClicked={setisClicked} >
+                <form className="search__form" onSubmit={handleSubmit} noValidate isSubmitted={isSubmitted} >
                     
                     <input
                         className="search__form-text"
@@ -50,7 +50,6 @@ function SearchForm({ handleSearch, setPreloader, setIsChecked, isLoading }) {
                         placeholder="Фильм"
                         minLength="1"
                         maxLength="200"
-                        
                         autoComplete="off"
                         value={values.keyword || ""}
                         onChange={handleKeyword}
