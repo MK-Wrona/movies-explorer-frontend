@@ -1,0 +1,138 @@
+.movies-card {
+    min-width: 100%;
+    background-color: #2F2F2F;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.movies-card__info-box {
+    padding: 22px 0 22px 22px;
+}
+.movies-card:last-of-type {
+    margin-bottom: 0;
+}
+
+
+
+.movies-card__title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.movies-card__time{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+    color: #8B8B8B;
+    margin: 13px 0 24px 0;
+}
+
+.movies-card__like-button {
+    background-color: #2F2F2F;
+    border: none;
+    
+    background-image: url(../../images/dislike.svg);
+    width:14px;
+    height:12px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+}
+.movies-card__like-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+
+.movies-card__like-button_active {
+    background-color: #2F2F2F;
+    border: none;
+    cursor: pointer;
+    background-image: url(../../images/like.svg);
+    width:14px;
+    height:12px;
+}
+.movies-card__like-button_active:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+
+.movies-card__delete-button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+
+    border: none;
+    border-radius: 50px;
+
+    background-color: #2F2F2F;
+    background-image: url('../../images/delete.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+}
+.movies-card__delete-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.movies-card__image {
+    width: 220px;
+    height: 122px;
+    padding: 6px 6px 6px 0;
+}
+
+@media screen and (max-width: 530px) {
+    .movies-card {
+        display: grid;
+        justify-content: center;
+        min-width: 300px;
+        margin-right:0px;
+        
+        
+    }
+
+    .movies-card__info-box {
+        padding: 14px 16px 12px 14px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .movies-card__title {
+        font-size: 12px;
+        line-height: 15px;        
+    }
+
+    .movies-card__time {
+        margin: 8px 0 0 0;
+    }
+
+    .movies-card__image {
+        grid-row-start: 1;
+        width: 300px;
+        height: 168px;
+        padding: 10px 0 0 0;
+    }
+
+    
+}
+
+@media screen and (max-width: 360px) {
+    .movies-card {
+        min-width: 300px;
+    }
+    .movies-card__image {
+        padding: 0;
+    }
+}

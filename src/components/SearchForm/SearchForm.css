@@ -1,0 +1,111 @@
+.movies__search {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 80px 70px 0 70px;
+    padding-bottom: 83px;
+    border-bottom: 1px solid rgba(170, 170, 170, 0.2);
+}
+
+.search__form-text:focus {
+    outline: #3DDC84 solid 1px;
+}
+
+.search__form-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    border: none;
+    background-color: #202020;
+    outline: none;
+    border-radius: 10px;
+    padding-left: 22px;
+    padding-right: 22px;    
+    width: 100%;    
+}
+
+
+
+.search__form {
+    border: 1.5px solid rgba(170, 170, 170, 0.2);       
+    padding: 0;
+    
+    width: 100%;
+    max-height: 72px;    
+    display: inline-flex;
+    border-radius: 10px; 
+}
+.search__button_disable{
+    background-image: url('../../images/searchbtn.svg');
+    width: 100px;
+    height: 52px;
+    border-radius: 5px;
+    margin: 10px;
+    border: 1px solid #EE3465;
+    background-color: #202020;
+    
+    color:#FFFFFF
+}
+
+.search-form__caption{
+    height: 15px;
+    min-width:40px;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+}
+
+.search__button {
+    background-image: url('../../images/searchbtn.svg');
+    width: 100px;
+    height: 52px;
+    border-radius: 5px;
+    margin: 10px;
+    border: none;
+    background-color: #202020;
+    cursor: pointer;
+    color:#FFFFFF
+}
+
+.search__button:hover {
+    opacity: .8;
+}
+
+
+
+.search__input-error {
+    max-width: 396px;
+    height: 12px;
+    padding-right: 42px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+
+    color: #EE3465;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    .movies__search {
+        padding: 60px 0 60px;
+    }
+   
+
+}
+
+@media screen and (max-width: 550px) {
+    .movies__search {
+        max-width: calc(100% - 20px);
+    }
+   
+
+}

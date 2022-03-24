@@ -1,0 +1,151 @@
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.profile__name {
+  padding-top: 74px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+  margin:0;
+}
+
+.profile__edit-form {
+  width: 100%;
+  max-width: 410px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 123px;
+}
+
+.profile__label {
+  padding:10px 0px 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #FFFFFF;
+  margin: 0;
+  min-width: 141px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #424242;
+}
+
+.profile__label:last-of-type {
+  padding-top: 10px;
+  border-bottom: none;
+}
+
+.profile__input {
+  padding:10px 0px 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  
+  color: #FFFFFF;
+  
+  background-color: #202020;
+  border: none;
+  direction: rtl;
+  width: 100%;
+}
+
+.profile__input_invalid {
+  color: #EE3465;
+}
+
+.profile__input:focus {
+  background-color: #2f2f2f;
+}
+
+.profile__input-error {
+  max-width: 410px;
+  height: 12px;
+
+  padding-bottom: 4px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+
+  color: #EE3465;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+
+.profile__buttons-container {
+  display: grid;
+  justify-content: center;
+  margin-top: 220px;
+  text-align: center;
+}
+
+.profile__button {
+  border: none;
+  background-color: #202020;
+
+  color: #ffffff;
+  
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+
+  cursor: pointer;
+}
+
+.profile__button:hover {
+  opacity: 0.8;
+}
+
+.profile__button_disable {
+  color: #2F2F2F;
+}
+
+.profile__button_logout {
+  padding-top: 16px;
+  text-decoration: none;
+  font-style: normal;
+  line-height: 16px;
+  font-weight: 500;
+  font-size: 13px;
+  color: #EE3465;
+}
+
+@media screen and (max-width: 768px) {
+  .profile {
+      padding: 236px 0 269px;
+  }
+  .profile__edit-form{
+      padding-bottom: 210px;
+  }
+  .profile__welcome {
+      padding-bottom: 96px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .profile {
+      padding: 70px 0 40px;
+  }
+  .profile__welcome {
+      padding-bottom: 80px;
+  }
+  .profile__edit-form{
+      width: 260px;
+      padding-bottom: 379px
+  }
+}
